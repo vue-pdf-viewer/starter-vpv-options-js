@@ -1,5 +1,5 @@
 <script>
-import { VPdfViewer } from "@vpv/viewer"
+import { VPdfViewer } from "@vue-pdf-viewer/viewer"
 export default {
   components: { VPdfViewer },
   data () {

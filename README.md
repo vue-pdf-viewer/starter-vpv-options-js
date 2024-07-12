@@ -68,7 +68,7 @@ Once the example project is running, you can explore the source code to see how 
 
     ```javascript
       <script>
-        import { VPdfViewer } from '@vpv/viewer';
+        import { VPdfViewer } from '@vue-pdf-viewer/viewer';
         export default {
           components: { VPdfViewer },
           data () {
