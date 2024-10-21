@@ -1,14 +1,15 @@
 <script>
-import { VPdfViewer } from "@vue-pdf-viewer/viewer"
-export default {
-  components: { VPdfViewer },
-  data () {
+  import AppPdfViewer from "./components/AppPdfViewer.vue";
+  export default {
+    components: { AppPdfViewer },
+    data() {
       const toolbarOptions = false
       return {
+        pdfSrc: 'https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf',
         toolbarOptions
       }
     }
-}
+  }
 </script>
 
 <template>
@@ -17,19 +18,17 @@ export default {
     <br />
     <h2>Default Toolbar</h2>
     <div class="pdf-viewer-wrapper">
-      <VPdfViewer
-        src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf" />
+      <AppPdfViewer :src="pdfSrc" />
     </div>
     <h2>Without Toolbar</h2>
     <div class="pdf-viewer-wrapper">
-      <VPdfViewer src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
-        :toolbar-options="toolbarOptions" />
+      <AppPdfViewer :src="pdfSrc" :toolbar-options="toolbarOptions" />
     </div>
     <h2>Mobile</h2>
     <div class="pdf-viewer-wrapper-mobile">
-      <VPdfViewer
-        src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf" />
+      <AppPdfViewer :src="pdfSrc" />
     </div>
+    <AppPdfViewer :src="pdfSrc" title="Shared Component" />
   </div>
 </template>
 
