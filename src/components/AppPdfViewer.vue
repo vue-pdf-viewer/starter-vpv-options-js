@@ -26,6 +26,12 @@
 					this.isValidated = true;
 				}
 			},
+			"$refs.pdfViewer": {
+				handler(v) {
+					console.log("These are VPV instance properties", Object.keys(v));
+				},
+				deep: true,
+			},
 		},
 		beforeMount() {
 			// Call the `useLicense` hook with the license key inside the `beforeMount` lifecycle hook
@@ -46,8 +52,10 @@
 			{{ title }}
 		</h2>
 		<!-- If the license is validated, show the VPdfViewer component, so the watermark will be gone -->
-		<div :style="{ width: '1028px', height: '700px', margin: '0 auto' }">
-			<VPdfViewer v-bind="$props" />
+		<div :style="{ height: '700px', margin: '0 auto' }">
+			<VPdfViewer
+				v-bind="$props"
+				ref="pdfViewer" />
 		</div>
 	</div>
 </template>
